@@ -1,14 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html class = "dark">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>BETA VERSION</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
 
-  <style>
-  html {
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        screens: {
+      'xs': '480px',
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+      'tablet': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type = "text/tailwindcss">
+    @layer components{
+      #toggle:checked ~ label div.toggle-dot {
+        @apply translate-x-3;
+      }
+    }
+  @layer components {
+    html {
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -16,28 +62,89 @@
     width: 0;  
     background: transparent;  
 }
+  }
     </style>
 
 </head>
 
 <body>
 
-  <header class="text-gray-600 body-font">
+  <header class="text-gray-600 body-font dark:bg-[#2C2E43] dark:text-[#ffff] grid-cols-2">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="https://discord.gg/yrkFWjAR" target="_blank">
+      <a class="flex title-font font-medium sm:justify-center items-center text-gray-900 mb-4 md:mb-0" href="https://discord.gg/yrkFWjAR" target="_blank">
         <img src="https://cdn.discordapp.com/attachments/698285715993264139/933038356139499550/colt.jpg"><span
-          class="ml-3 text-xl">Colt eSports</span>
+          class="ml-3 text-xl dark:text-[#ffff]">Colt eSports</span>
       </a>
       <nav
         class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 hover:text-gray-900" href="https://coltesports.com/index2.html">Home</a>
-        <a class="mr-5 hover:text-gray-900" href="https://coltesports.com/ourteam.html">Our Team</a>
-        <a class="mr-5 hover:text-gray-900" href="https://forums.coltesports.com/index.php">Join us</a>
+        <a class="text-gray-900 tracking-wide uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 ease-linear transition-all duration-150 dark:text-[#ffff] dark:shadow-[#ffff]" href="#">Home</a>
+        <div class="flex flex-wrap">
+          <div class="w-full sm:w-6/12 md:w-4/12 px-4">
+            <div class="relative inline-flex align-middle w-full">
+              <button class="dark:text-[#ffff] dark:shadow-[#ffff] text-gray-900 tracking-wide inline-flex uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 ease-linear transition-all duration-150" type="button" onclick="openDropdown(event,'dropdown-id')">
+                pricing<div class = "pl-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg></div>
+              </button>
+              <div class="hidden bg-white dark:bg-[#21325E] ring-2 text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width:12rem" id="dropdown-id">
+                <a href="#" class="dark:text-[#ffff] dark:bg-[#21325E] uppercase tracking-wide text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
+                  products
+                </a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
+        <script>
+          function openDropdown(event,dropdownID){
+            let element = event.target;
+            while(element.nodeName !== "BUTTON"){
+              element = element.parentNode;
+            }
+            var popper = Popper.createPopper(element, document.getElementById(dropdownID), {
+              placement: 'bottom-start'
+            });
+            document.getElementById(dropdownID).classList.toggle("hidden");
+            document.getElementById(dropdownID).classList.toggle("block");
+          }
+        </script>
+       <a class="text-gray-900 tracking-wide inline-flex uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 ease-linear transition-all duration-150 dark:text-[#ffff] dark:shadow-[#ffff]" href="https://forums.coltesports.com/index.php">Support Us</a>
+       <div class="ml-5 mr-5">
+        <a class="text-gray-900 tracking-wide inline-flex uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 ease-linear transition-all duration-150 dark:text-[#ffff] dark:shadow-[#ffff]" href="https://forums.coltesports.com/index.php">our team</a>
+        </div>
+
+        <!-- dark/light mode toggle bar-->
+        
+        
+        <div class="flex justify-end items-center space-x-2 ml-52">
+          <span class="text-sm text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#FFC600]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg></span>
+          <div>
+        <input type = "checkbox" name="" id="toggle" class="hidden">
+        <label for="toggle" class="cursor-pointer">
+        <div class="w-9 h-5 flex items-center bg-gray-300 rounded-full p-1">
+          <div class = "toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out">
+          </div>
+        </div>
+        </label>    
+        </div>
+        <span class = "text-sm text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg></span>
+        </div>
+        <div class = "md:hidden flex items-center">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </nav>
       <a href="https://coltesports.com/joinus.html">
       <button
-        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Forum
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-sm tracking-wide uppercase mt-4 md:mt-0 dark:text-[#000000]">forum<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           class="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
@@ -48,7 +155,7 @@
     style="background-image: url(https://cdn.discordapp.com/attachments/878365480811921428/878686489008033873/web.jpg)">
 
     <hr color="red">
-    <p class="text-center text-lg text-white"> OUR WORK</p>
+    <p class="text-center text-lg text-white">OUR WORK</p>
     <hr color="red"><br><br>
 
 
@@ -95,6 +202,7 @@
           </div>
         </div>
       </div>
+      
       <div class="lg:w-1/3 sm:w-1/2 p-4">
         <div class="flex relative">
           <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
@@ -121,20 +229,20 @@
     </div>
   </div>
   </section>
-  <footer class="text-gray-600 body-font">
+  <footer class="text-gray-600 body-font dark:bg-[#2C2E43]">
     <div class="container px-5 py-4 mx-auto flex items-center sm:flex-row flex-col">
-      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-0 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©2022
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-0 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 dark:text-[#ffff]">©2022
         Argonaut
       </p>
       <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
           <a class="text-gray-500" href="https://coltesports.com/comingsoon.html">
-            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 dark:text-[#ffff]"
               viewBox="0 0 24 24">
               <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
             </svg></a>
         </a>
         <a class="ml-3 text-gray-500" href="https://twitter.com/Coltesports1">
-          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 dark:text-[#ffff]"
             viewBox="0 0 24 24">
             <path
               d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
@@ -143,14 +251,14 @@
         </a>
         <a class="ml-3 text-gray-500" href="https://www.instagram.com/colt_esports1/">
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-5 h-5" viewBox="0 0 24 24">
+            class="w-5 h-5 dark:text-[#ffff]" viewBox="0 0 24 24">
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
           </svg>
         </a>
         <a class="ml-3 text-gray-500" href="https://www.linkedin.com/company/colt-esports">
           <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
-            class="w-5 h-5" viewBox="0 0 24 24">
+            class="w-5 h-5 dark:text-[#ffff]" viewBox="0 0 24 24">
             <path stroke="none"
               d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
             <circle cx="4" cy="4" r="2" stroke="none"></circle>
@@ -160,3 +268,20 @@
     </div>
   </footer>
   </div>
+  <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+  <script>
+    const checkbox = document.querySelector('#toggle');
+    const html = document.querySelector('html');
+  
+    const toggleDarkMode = function () {
+      checkbox.checked 
+      ? html.classList.add('dark')
+      : html.classList.remove('dark');
+    }
+  
+    toggleDarkMode();
+    checkbox.addEventListener('click', toggleDarkMode);
+  </script>
+  </body>
+  </html>
+  
