@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<html class="dark">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>BETA VERSION</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-
-  </script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-
-        extend: {
-          colors: {
-            clifford: '#da373d',
+<html class = "dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>BETA VERSION</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
           }
         }
       }
-    }
-  </script>
-
-  <style type="text/tailwindcss">
-    @layer components{
-      #toggle:checked ~ label div.toggle-dot {
-        @apply translate-x-3;
-      }
-    }
-  @layer components {
+    </script>
+    <style type = "text/tailwindcss">
+      @layer components{
+        #toggle:checked ~ label div.toggle-dot {
+          @apply translate-x-3;
+        }
+     @layer components {
     html {
     overflow: scroll;
     overflow-x: hidden;
@@ -38,82 +32,144 @@
     width: 0;  
     background: transparent;  
 }
-  }
-    </style>
-
-</head>
-
-<body>
-
-  <header class="text-gray-600 body-font dark:bg-[#2C2E43] dark:text-[#ffff] grid-cols-2">
-    <div class="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
-      <a class="flex title-font font-medium sm:justify-center items-center text-gray-900 mb-4 md:mb-0"
-        href="https://discord.gg/yrkFWjAR" target="_blank">
-        <img src="https://cdn.discordapp.com/attachments/698285715993264139/933038356139499550/colt.jpg"><span
-          class="ml-3 text-xl dark:text-[#ffff]">Colt eSports</span>
-      </a>
-
-      <nav
-        class="md:mx-2 md:ml-4 md:py-1 md:pl-4 md:border-0 md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-        <a class="text-gray-900 tracking-wide uppercase text-sm px-5 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mx-2 mb-1 bg-blueGray-700 ease-linear transition-all duration-150 dark:text-[#ffff] dark:shadow-[#ffff]"
-          href="#">Home</a>
-        <a class="text-gray-900 tracking-wide uppercase text-sm px-5 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mx-2 mb-1 bg-blueGray-700 ease-linear transition-all duration-150 dark:text-[#ffff] dark:shadow-[#ffff]"
-          href="https://forums.coltesports.com/index.php">Forum</a>
-        <!-- js script for dropdown --> 
-        <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
-        <script>
-          function openDropdown(event, dropdownID) {
-            let element = event.target;
-            while (element.nodeName !== "BUTTON") {
-              element = element.parentNode;
-            }
-            var popper = Popper.createPopper(element, document.getElementById(dropdownID), {
-              placement: 'bottom-start'
-            });
-            document.getElementById(dropdownID).classList.toggle("hidden");
-            document.getElementById(dropdownID).classList.toggle("block");
-          }
-        </script>
-        <a class="text-gray-900 tracking-wide inline-flex uppercase text-sm px-5 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mx-1 mb-1 bg-blueGray-700 ease-linear transition-all duration-150 dark:text-[#ffff] dark:shadow-[#ffff]"
-          href="">Support Us</a>
-        <div class="mx-1">
-          <a class="text-gray-900 tracking-wide inline-flex uppercase text-sm px-5 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mx-1 mb-1 bg-blueGray-700 ease-linear transition-all duration-150 dark:text-[#ffff] dark:shadow-[#ffff]"
-            href="">Our Team</a>
-        </div>
-        <div class="flex flex-wrap">
-          <div class="w-full sm:w-6/12 md:w-4/12 px-4">
-            <div class="relative inline-flex align-middle w-full">
-              <div class="relative inline-flex align-middle w-full">
-                <button
-                  class="dark:text-[#ffff] dark:shadow-[#ffff] text-gray-900 tracking-wide inline-flex uppercase text-sm px-5 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mx-1 mb-1 bg-blueGray-700 ease-linear transition-all duration-150"
-                  type="button" onclick="openDropdown(event,'dropdown-id')">
-                  Pricing<div class="pl-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                      class="bi bi-chevron-down" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  class="hidden bg-white dark:bg-[#21325E] ring-2 text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
-                  style="min-width:12rem" id="dropdown-id">
-                  <a href="#"
-                    class="dark:text-[#ffff] dark:bg-[#21325E] uppercase tracking-wide text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                    Products
-                  </a>
-                  <a href="#"
-                    class="dark:text-[#ffff] dark:bg-[#21325E] uppercase tracking-wide border-t-2 text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
+      }
+    }
+      </style>
+	</head>
+	<body>
+		<!-- Navbar goes here -->
+		<nav class="bg-white shadow-lg dark:bg-[#161E54]">
+			<div class="max-w-6xl mx-auto px-4">
+				<div class="flex justify-between">
+					<div class="flex space-x-7">
+						<div>
+							<!-- Website Logo -->
+							<a href="#" class="flex items-center py-4 px-2">
+								<img src="https://cdn.discordapp.com/attachments/698285715993264139/933038356139499550/colt.jpg" alt="Logo" class="h-8 w-8 mr-2">
+								<span class="font-semibold text-gray-500 text-lg dark:text-[#ffff]">Colt eSports</span>
+							</a>
+						</div>
+						<!-- Primary Navbar items -->
+						<div class="hidden md:flex items-center space-x-1 inline-flex tracking-wide">
+							<a href="index.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-800 transition duration-300 border-green-500 font-semibold dark:text-[#ffff]">Home</a>
+              <button class="dark:text-[#ffff] py-4 px-2 text-gray-500 font-semibold hover:text-blue-800 tracking-wide inline-flex ease-linear transition-all duration-300" type="button" onclick="openDropdown(event,'dropdown-id')">
+                Pricing<div class = "pl-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-chevron-down inline-flex pt-2" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg></div>
+              </button>
+              <div class="hidden bg-white ring-2 ring-[#09009B] dark:ring-[#ffff] dark:bg-[#161E54] z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1" style="min-width:12rem" id="dropdown-id">
+                <a href="#" class="dark:text-[#ffff]  tracking-wide hover:text-blue-800 py-2 px-4 font-normal border-b-2 block w-full whitespace-nowrap bg-transparent text-blueGray-700">
+                  Products
+                </a>
+                  <a href="#" class="dark:text-[#ffff] tracking-wide hover:text-blue-800 py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
                     Colt Music
                   </a>
+</div>
+<!-- js for drop-down-->
+<script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
+<script>
+  function openDropdown(event,dropdownID){
+    let element = event.target;
+    while(element.nodeName !== "BUTTON"){
+      element = element.parentNode;
+    }
+    var popper = Popper.createPopper(element, document.getElementById(dropdownID), {
+      placement: 'bottom-start'
+    });
+    document.getElementById(dropdownID).classList.toggle("hidden");
+    document.getElementById(dropdownID).classList.toggle("block");
+  }
+</script>
+<a href="" class="dark:text-[#ffff] py-4 px-2 text-gray-500 hover:text-blue-800 font-semibold transition duration-300">Support Us</a>
+							<a href="" class="dark:text-[#ffff] py-4 px-2 text-gray-500 font-semibold hover:text-blue-800 transition duration-300">Our Team</a>
+						</div>
+					</div>
+					<!-- Secondary Navbar items -->
+					<div class="hidden md:flex items-center space-x-3 ">
+             <!-- dark/light mode toggle bar-->
+              <div class="flex justify-end items-center space-x-2 ml-52">
+                <span class="text-sm text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#FFC600]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg></span>
+                <div>
+              <input type = "checkbox" name="" id="toggle" class="hidden">
+              <label for="toggle" class="cursor-pointer">
+              <div class="w-9 h-5 flex items-center bg-gray-300 rounded-full p-1">
+                <div class = "toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out">
                 </div>
               </div>
+              </label>    
+              </div>
+              <span class = "text-sm text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg></span>
+              </div>
+						<button><a href="https://forums.coltesports.com/index.php" class="py-2 px-2 font-medium text-white hover:bg-[#161E54] bg-[#14279B] dark:bg-[#ffff] dark:text-[#161E54] rounded transition duration-300">Forum
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          class="w-4 h-4 ml-1 inline-flex" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg></a>
+            </button>
+					</div>
+					<!-- Mobile menu button -->
+					<div class="md:hidden flex items-center">
+						<button class="outline-none mobile-menu-button">
+						<svg class="dark:text-[#ffff] text-blue-800 w-6 h-6"
+							x-show="!showMenu"
+							fill="none"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+					</div>
+				</div>
+			</div>
+			<!-- mobile menu -->
+			<div class="hidden mobile-menu">
+				<ul class="">
+					<li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-blue-800 font-semibold">Home</a></li>
+					<li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-800 hover:text-[#ffff] dark:text-[#ffff] transition duration-300">Products</a></li>
+					<li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-800 hover:text-[#ffff] dark:text-[#ffff] transition duration-300">Colt Music</a></li>
+					<li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-800 hover:text-[#ffff] dark:text-[#ffff] transition duration-300">Support Us</a></li>
+          <li><a href="#" class="block text-sm px-2 py-4 hover:bg-blue-800 hover:text-[#ffff] dark:text-[#ffff] transition duration-300">Our Team</a></li>
+          <li class="pb-3 mt-2"><div class="flex items-center space-x-2 ml-52">
+            <span class="text-sm text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#FFC600]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg></span>
+            <div>
+          <input type = "checkbox" name="" id="toggle" class="hidden">
+          <label for="toggle" class="cursor-pointer">
+          <div class="w-9 h-5 flex items-center bg-gray-300 rounded-full p-1">
+            <div class = "toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out">
             </div>
           </div>
-        </div>
-      </nav>
-  </header>
-  <div class="bg-fixed bg-center mx-auto bg-scroll"
+          </label>    
+          </div>
+          <span class = "text-sm text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg></span>
+          </div></li>
+				</ul>
+			</div>
+      <!-- js for hamburger menu -->
+			<script>
+				const btn = document.querySelector("button.mobile-menu-button");
+				const menu = document.querySelector(".mobile-menu");
+
+				btn.addEventListener("click", () => {
+					menu.classList.toggle("hidden");
+				});
+			</script>
+		</nav>
+		<!-- nav bar ends here -->
+
+    <div class="bg-fixed bg-center"
     style="background-image: url(https://cdn.discordapp.com/attachments/878365480811921428/878686489008033873/web.jpg)">
 
     <hr color="red">
@@ -125,52 +181,45 @@
 
       <div class="lg:w-1/3 sm:w-1/2 p-4">
         <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://i.imgur.com/UfUbBKv.jpg">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://i.imgur.com/UfUbBKv.jpg">
           <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
             <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Spicy Jade Cup</h2>
             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">104 Teams May 2021</h1>
-            <p class="leading-relaxed">Tournament was organised in colloboration with <br> South Asian and Bangladeshi
-              Communites. More than 140 teams showed there interest and registered.</p>
+            <p class="leading-relaxed">Tournament was organised in colloboration with South Asian and Bangladeshi Communites. More than 140 teams showed there interest and registered.</p>
           </div>
         </div>
       </div>
       <div class="lg:w-1/3 sm:w-1/2 p-4">
         <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://i.imgur.com/TjzzzRu.jpg">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://i.imgur.com/TjzzzRu.jpg">
           <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
             <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Monthly Playoffs S1</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">85 Teams Augest 2021</h1>
-            <p class="leading-relaxed">Colt's Official Tournament Series.<br>Playoffs gave opportunities to many new
-              teams to dive into the world of eSports and show there full potential. </p>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">85 Teams August 2021</h1>
+            <p class="leading-relaxed">Colt's Official Tournament Series. Playoffs gave opportunities to many new teams to dive into the world of eSports and show there full potential. </p>
           </div>
         </div>
       </div>
       <div class="lg:w-1/3 sm:w-1/2 p-4">
         <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://i.imgur.com/k6fFYs5.jpg">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://i.imgur.com/k6fFYs5.jpg">
           <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
             <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Monthly Playoffs S2</h2>
             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">40 Teams September</h1>
-            <p class="leading-relaxed">Colt's Official Tournament Series.<br>Playoffs gave opportunities to many new
-              teams to dive into the world of eSports and show there full potential.</p>
+            <p class="leading-relaxed">Colt's Official Tournament Series. Playoffs gave opportunities to many new teams to dive into the world of eSports and show there full potential.</p>
           </div>
         </div>
       </div>
       <div class="lg:w-1/3 sm:w-1/2 p-4">
         <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://i.imgur.com/CgLztMC.jpg">
+          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://i.imgur.com/UfUbBKv.jpg">
           <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
             <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Playoffs Season 3</h2>
             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">COMING SOON</h1>
-            <p class="leading-relaxed">Stay Tune <br> Hype is real <br> Join our Forum to get every news early.<br></p>
+            <p class="leading-relaxed">Stay Tuned! Hype is real Join our <a href="https://forums.coltesports.com/index.php"><b class = "text-blue-800">Forum</b></a> to get every news early.</p>
           </div>
         </div>
       </div>
-
+      
       <div class="lg:w-1/3 sm:w-1/2 p-4">
         <div class="flex relative">
           <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
@@ -178,8 +227,7 @@
           <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
             <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">CAN'T WAIT?!</h2>
             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">We have lots of plans for 2022.</h1>
-            <p class="leading-relaxed"> So many things are on it's way, <br> You can also join COLT STARS or Organise
-              something big together! </p>
+            <p class="leading-relaxed"> So many things are on it's way! You can also join COLT STARS or Organise something big together! </p>
           </div>
         </div>
       </div>
@@ -188,10 +236,9 @@
           <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center"
             src="https://imgur.com/HYw5QCx.jpg">
           <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Wanna do something big
-              together?</h2>
+            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Wanna do something big together?</h2>
             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Organise or Join COLT STARS</h1>
-            <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing<br>
+            <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing
               tousled waistcoat.</p>
           </div>
         </div>
@@ -199,47 +246,21 @@
     </div>
   </div>
   </section>
-  <footer class="text-gray-600 body-font dark:bg-[#2C2E43]">
+  <footer class="text-gray-600 body-font dark:bg-[#161E54]">
     <div class="container px-5 py-4 mx-auto flex items-center sm:flex-row flex-col">
-      <p
-        class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-0 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 dark:text-[#ffff]">
-        ©2022
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-0 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4 dark:text-[#ffff]">©2022
         Argonaut
       </p>
-      <!-- dark/light mode toggle bar-->
-      <div class="ml-auto">
-      <div class="flex justify-cenr space-x-2">
-        <span class="text-sm text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#FFC600]"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg></span>
-        <div>
-          <input type="checkbox" name="" id="toggle" class="hidden">
-          <label for="toggle" class="cursor-pointer">
-            <div class="w-9 h-5 flex items-center bg-gray-300 rounded-full p-1">
-              <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out">
-              </div>
-            </div>
-          </label>
-        </div>
-        <span class="text-sm text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg></span>
-</div>
-      </div>
       <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-        <a class="text-gray-500" href="https://coltesports.com/comingsoon.html">
-          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-5 h-5 dark:text-[#ffff]" viewBox="0 0 24 24">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-          </svg></a>
+          <a class="text-gray-500" href="https://coltesports.com/comingsoon.html">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 dark:text-[#ffff]"
+              viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg></a>
         </a>
         <a class="ml-3 text-gray-500" href="https://twitter.com/Coltesports1">
-          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-5 h-5 dark:text-[#ffff]" viewBox="0 0 24 24">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 dark:text-[#ffff]"
+            viewBox="0 0 24 24">
             <path
               d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
             </path>
@@ -263,21 +284,18 @@
       </span>
     </div>
   </footer>
-  </div>
-  <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
-  <script>
-    const checkbox = document.querySelector('#toggle');
-    const html = document.querySelector('html');
-
-    const toggleDarkMode = function () {
-      checkbox.checked
+    <script>
+      const checkbox = document.querySelector('#toggle');
+      const html = document.querySelector('html');
+    
+      const toggleDarkMode = function () {
+        checkbox.checked 
         ? html.classList.add('dark')
         : html.classList.remove('dark');
-    }
-
-    toggleDarkMode();
-    checkbox.addEventListener('click', toggleDarkMode);
-  </script>
-</body>
-
+      }
+    
+      toggleDarkMode();
+      checkbox.addEventListener('click', toggleDarkMode);
+    </script>
+	</body>
 </html>
