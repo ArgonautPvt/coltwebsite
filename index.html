@@ -39,165 +39,29 @@
 </head>
 
 <body>
-  <!-- Navbar goes here -->
-  <nav class="bg-white shadow-lg dark:bg-[#161E54]">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="flex justify-between">
-        <div class="flex inline-flex space-x-10">
-          <div>
-            <!-- Website Logo -->
-            <a href="#" class="flex items-center py-4 px-2">
-              <img src="https://cdn.discordapp.com/attachments/698285715993264139/933038356139499550/colt.jpg"
-                alt="Logo" class="h-8 w-8 mr-2">
-              <span class="font-semibold text-gray-500 text-lg dark:text-[#ffff]">Colt eSports</span>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+                href="https://discord.gg/yrkFWjAR" target="_blank">
+                <img src="https://cdn.discordapp.com/attachments/698285715993264139/933038356139499550/colt.jpg"><span
+                    class="ml-3 text-xl">Colt eSports</span>
             </a>
-          </div>
-          <!-- Primary Navbar items -->
-          <div class="hidden md:flex items-center space-x-1 inline-flex tracking-wide">
-            <a href="index.html"
-              class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-800 transition duration-300 border-green-500 font-semibold dark:text-[#ffff]">Home</a>
-            <button
-              class="dark:text-[#ffff] py-4 px-2 text-gray-500 font-semibold hover:text-blue-800 tracking-wide inline-flex ease-linear transition-all duration-300"
-              type="button" onclick="openDropdown(event,'dropdown-id')">
-              Products<div class="pl-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor"
-                  class="bi bi-chevron-down inline-flex pt-2" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                </svg>
-              </div>
-            </button>
-            <div
-              class="hidden bg-white ring-2 ring-[#09009B] dark:ring-[#ffff] dark:bg-[#161E54] z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
-              style="min-width:12rem" id="dropdown-id">
-              <a href="#"
-                class="dark:text-[#ffff]  tracking-wide hover:text-blue-800 py-2 px-4 font-normal border-b-2 block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                Pricing
-              </a>
-              <a href="#"
-                class="dark:text-[#ffff] tracking-wide hover:text-blue-800 py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                Colt Music
-              </a>
-            </div>
-            <!-- js for drop-down-->
-            <script src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js" charset="utf-8"></script>
-            <script>
-              function openDropdown(event, dropdownID) {
-                let element = event.target;
-                while (element.nodeName !== "BUTTON") {
-                  element = element.parentNode;
-                }
-                var popper = Popper.createPopper(element, document.getElementById(dropdownID), {
-                  placement: 'bottom-start'
-                });
-                document.getElementById(dropdownID).classList.toggle("hidden");
-                document.getElementById(dropdownID).classList.toggle("block");
-              }
-            </script>
-            <a href=""
-              class="dark:text-[#ffff] py-4 px-2 text-gray-500 hover:text-blue-800 font-semibold transition duration-300">Support
-              Us</a>
-            <a href=""
-              class="dark:text-[#ffff] py-4 px-2 text-gray-500 font-semibold hover:text-blue-800 transition duration-300">Our
-              Team</a>
-          </div>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+                <a class="mx-2 hover:text-gray-900" href="https://coltesports.com/index2.html">Home</a>
+                <a class="mx-2 hover:text-gray-900" href="https://coltesports.com/comingsoon.html">Our Team</a>
+                <a class="mx-2 hover:text-gray-900" href="https://coltesports.com/comingsoon.html">Hire US!!</a>
+            </nav>
+            <a href="https://forums.coltesports.com/index.php">
+                <button
+                    class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Forum
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </button></a>
         </div>
-        <!-- Secondary Navbar items -->
-        <div class="hidden md:flex items-center space-x-3 ">
-          <!-- dark/light mode toggle bar-->
-          <div class="flex justify-end items-center space-x-2 ml-52">
-            <span class="text-sm text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#FFC600]"
-                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg></span>
-            <div>
-              <input type="checkbox" name="" id="toggle" class="hidden">
-              <label for="toggle" class="cursor-pointer">
-                <div class="w-9 h-5 flex items-center bg-gray-300 rounded-full p-1">
-                  <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out">
-                  </div>
-                </div>
-              </label>
-            </div>
-            <span class="text-sm text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-              </svg></span>
-          </div>
-          <button><a href="https://forums.coltesports.com/index.php"
-              class="py-2 px-2 font-medium text-white hover:bg-[#161E54] bg-[#14279B] dark:bg-[#ffff] dark:text-[#161E54] rounded transition duration-300">Forum
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                class="w-4 h-4 ml-1 inline-flex" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg></a>
-          </button>
-        </div>
-        <!-- Mobile menu button -->
-        <div class="md:hidden flex items-center">
-          <button class="outline-none mobile-menu-button">
-            <svg class="dark:text-[#ffff] text-blue-800 w-6 h-6" x-show="!showMenu" fill="none" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-              <path d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- mobile menu -->
-    <div class="hidden mobile-menu">
-      <ul class="">
-        <li class="active"><a href="index.html"
-            class="block text-sm px-2 py-4 text-white bg-blue-800 font-semibold">Home</a></li>
-        <li><a href="#"
-            class="block text-sm px-2 py-4 hover:bg-blue-800 hover:text-[#ffff] dark:text-[#ffff] transition duration-300">Products</a>
-        </li>
-        <li><a href="#"
-            class="block text-sm px-2 py-4 hover:bg-blue-800 hover:text-[#ffff] dark:text-[#ffff] transition duration-300">Colt
-            Music</a></li>
-        <li><a href="#"
-            class="block text-sm px-2 py-4 hover:bg-blue-800 hover:text-[#ffff] dark:text-[#ffff] transition duration-300">Support
-            Us</a></li>
-        <li><a href="#"
-            class="block text-sm px-2 py-4 hover:bg-blue-800 hover:text-[#ffff] dark:text-[#ffff] transition duration-300">Our
-            Team</a></li>
-        <li class="pb-3 mt-2">
-          <div class="flex items-center space-x-2 ml-52">
-            <span class="text-sm text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#FFC600]"
-                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg></span>
-            <div>
-              <input type="checkbox" name="" id="toggle" class="hidden">
-              <label for="toggle" class="cursor-pointer">
-                <div class="w-9 h-5 flex items-center bg-gray-300 rounded-full p-1">
-                  <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out">
-                  </div>
-                </div>
-              </label>
-            </div>
-            <span class="text-sm text-gray-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-              </svg></span>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- js for hamburger menu -->
-    <script>
-      const btn = document.querySelector("button.mobile-menu-button");
-      const menu = document.querySelector(".mobile-menu");
-
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    </script>
-  </nav>
-  <!-- nav bar ends here -->
+    </header>
 
   <div class="bg-fixed bg-center"
     style="background-image: url(https://cdn.discordapp.com/attachments/878365480811921428/878686489008033873/web.jpg)">
