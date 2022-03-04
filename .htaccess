@@ -2,5 +2,15 @@ RewriteEngine On
 RewriteCond %{HTTPS} off 
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+#Block track & trace to prevent XSS attacks
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} ^TRACE
+RewriteRule .* - [F]
+
 ErrorDocument 404 https://coltesports.com/404.html
 
